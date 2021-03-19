@@ -1,3 +1,5 @@
+package testng;
+
 public class TestNGAnnotations {
 
 //    @BeforeSuite: The annotated method will be run before all tests in this suite have run.

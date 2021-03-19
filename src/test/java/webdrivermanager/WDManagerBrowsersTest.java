@@ -1,3 +1,5 @@
+package webdrivermanager;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.OperatingSystem;
 import io.github.bonigarcia.wdm.managers.PhantomJsDriverManager;
