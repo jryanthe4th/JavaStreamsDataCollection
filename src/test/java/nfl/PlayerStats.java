@@ -19,7 +19,7 @@ import static org.testng.Assert.*;
 
 public class PlayerStats extends TestBase {
 
-    public PlayerStats() throws IOException {};
+//    public PlayerStats() throws IOException {};
 
     @Test
     public void getPlayerNames() throws IOException {
@@ -62,8 +62,13 @@ public class PlayerStats extends TestBase {
 //                    .collect(Collectors.toList());
 
             data = playerRows.stream()
-                    .map(row -> row.getText().toString().replace(" ", ",\t"))
+                    .map(row -> row.getText().toString().replace(" ", ","))
                     .collect(Collectors.toList());
+//            data = playerRows.stream()
+//                    .toString().toCharArray();
+
+                    //.map(row -> row.getText().toString().replace(" ", ","))
+                    //.collect(Collectors.toList());
 
 //            data = playerRows.stream()
 //                    .map(row -> row.findElements(By.xpath("//table/tbody/tr[1]/td"))
@@ -128,7 +133,7 @@ public class PlayerStats extends TestBase {
 //        return null;
 //    }
 
-    public void writeCSVFile(List<String> data, String filename, String recordSeparator) throws IOException {
+    private void writeCSVFile(List<String> data, String filename, String recordSeparator) throws IOException {
         //String NEW_LINE_SEPARATOR = lineSeparator;
         String CSV_File_Path = "./target/csv/" + filename + ".csv";
         // Write the file
