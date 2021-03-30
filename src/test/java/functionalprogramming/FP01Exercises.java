@@ -19,6 +19,7 @@ public class FP01Exercises {
         printNumberOfCharactersInEachCourseName(courses);
     }
 
+    // Exercise
     private static void printAllOddNumbersInList(List<Integer> numbers) {
 
         numbers.stream()
@@ -26,12 +27,14 @@ public class FP01Exercises {
                 .forEach(System.out::println);
     }
 
+    // Exercise 1:
     private static void printAllCoursesIndividually(List<String> courses) {
 
         courses.stream()
                 .forEach(System.out::println);
     }
 
+    // Exercise 2:
     private static void printCoursesContainingWord(List<String> courses) {
 
         courses.stream()
@@ -39,6 +42,7 @@ public class FP01Exercises {
                 .forEach(System.out::println);
     }
 
+    // Exercise 3:
     private static void printCoursesWhoseNameHasFourLetters(List<String> courses) {
 
         courses.stream()
@@ -46,6 +50,7 @@ public class FP01Exercises {
                 .forEach(System.out::println);
     }
 
+    // Exercise 4:
     private static void printSquaresOfEvenNumbersInList(List<Integer> numbers) {
 
         numbers.stream()
@@ -54,6 +59,7 @@ public class FP01Exercises {
                 .forEach(System.out::println);
     }
 
+    // Exercise 5:
     private static void printCubesOfOddNumbersInList(List<Integer> numbers) {
 
         numbers.stream()
@@ -62,6 +68,7 @@ public class FP01Exercises {
                 .forEach(System.out::println);
     }
 
+    // Exercise 6:
     private static void printNumberOfCharactersInEachCourseName(List<String> courses) {
 
         courses.stream()
