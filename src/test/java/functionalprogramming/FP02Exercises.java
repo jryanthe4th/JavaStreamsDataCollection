@@ -1,8 +1,6 @@
 package functionalprogramming;
 
-import com.sun.tools.javac.util.List;
-import testbase.TestBase;
-
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class FP02Exercises {
@@ -10,10 +8,14 @@ public class FP02Exercises {
     public static void main(String[] args) {
 
         List<Integer> numbers = List.of(12,9,13,4,6,2,4,12,15);
+        List<String> courses = List.of("Spring", "Spring Boot", "API", "Microservices",
+                "AWS", "PCF", "Azure", "Docker", "Kubernetes");
 
         System.out.println(squareNumbersInListAndFindSumOfSquares(numbers));
         System.out.println(cubeNumbersInListAndFindSumOfCubes(numbers));
         System.out.println(findSumOfOddNumbersInList(numbers));
+        System.out.println(getEventNumbersOnly(numbers));
+        System.out.println(getLengthOfAllCourseTitles(courses));
 
     }
 
@@ -47,5 +49,20 @@ public class FP02Exercises {
                 .reduce(0, (x,y) -> x + y);
     }
 
+    // Exercise 10: Create a list with even numbers filtered from the numbers list
+    private static List<Integer> getEventNumbersOnly(List<Integer> numbers) {
+
+        return numbers.stream()
+                .filter(number -> number % 2 == 0)
+                .collect(Collectors.toList());
+    }
+
+    // Exercise 11: Create a list with lengths of all course titles
+    private static List<Integer> getLengthOfAllCourseTitles(List<String> courses) {
+
+        return courses.stream()
+                .map(course -> course.length())
+                .collect(Collectors.toList());
+    }
 
 }

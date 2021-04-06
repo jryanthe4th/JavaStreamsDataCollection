@@ -111,13 +111,19 @@ public class PlayerStats extends TestBase {
                 .flatMap(s -> s.stream())
                 .collect(Collectors.toList());
 
-        System.out.println(playerNames);
-        System.out.println(allPlayers);
-        System.out.println(playerStats);
-        System.out.println(playerData);
-        System.out.println(allData);
-        writeCSVFile(allPlayers, "AllPlayers", "\n");
-        writeCSVFile(allData, "AllData", "\n");
+//        List<String[]> arr = allData.stream().map(playerRow -> playerRow.split(" ")).collect(Collectors.toList());
+        String[] allDataString = allData.stream().toArray(String[]::new);
+        String cleanData = Arrays.toString(allDataString);
+        System.out.println("cleanData : " + Arrays.toString(cleanData.split(",")));
+
+//        System.out.println(playerNames);
+//        System.out.println(allPlayers);
+//        System.out.println(playerStats);
+//        System.out.println(playerData);
+//        System.out.println(allData);
+
+        //writeCSVFile(allPlayers, "AllPlayers", "\n");
+        writeCSVFile(allDataString, "AllData", "\n");
 
     }
 
@@ -133,7 +139,7 @@ public class PlayerStats extends TestBase {
 //        return null;
 //    }
 
-    private void writeCSVFile(List<String> data, String filename, String recordSeparator) throws IOException {
+    private void writeCSVFile(String[] data, String filename, String recordSeparator) throws IOException {
         //String NEW_LINE_SEPARATOR = lineSeparator;
         String CSV_File_Path = "./target/csv/" + filename + ".csv";
         // Write the file
