@@ -10,7 +10,7 @@ public class FP03Exercises {
     // Find functional interface behind the second argument of reduce method.
     // Create an implementation for the Functional Interface.
     // int sum = numbers.stream().reduce(0, Integer::sum);
-    
+
 
 
     // Exercise 13
