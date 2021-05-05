@@ -29,28 +29,28 @@ public class FP07JoiningStrings {
                         .map(course -> course.split(""))
                         .collect(Collectors.toList())
         );
-
-        System.out.println(
-                courses.stream()
-                        .map(course -> course.split(""))
-                        .flatMap(Arrays::stream)
-                        .collect(Collectors.toList())
-        );
-
-        System.out.println(
-                courses.stream()
-                        .flatMap(course -> courses2.stream()
-                                .map(course2 -> List.of(course, course2)))
-                        .collect(Collectors.toList())
-        );
-
-        System.out.println(
-                courses.stream()
-                        .flatMap(course -> courses2.stream()
-                                .map(course2 -> List.of(course, course2)))
-                        .filter(list -> !list.get(0)
-                                .equals(list.get(1)))
-                        .collect(Collectors.toList())
-        );
+//
+//        System.out.println(
+//                courses.stream()
+//                        .map(course -> course.split(""))
+//                        .flatMap(Arrays::stream)
+//                        .collect(Collectors.toList())
+//        );
+//
+//        System.out.println(
+//                courses.stream()
+//                        .flatMap(course -> courses2.stream()
+//                                .map(course2 -> List.of(course, course2)))
+//                        .collect(Collectors.toList())
+//        );
+//
+//        System.out.println(
+//                courses.stream()
+//                        .flatMap(course -> courses2.stream()
+//                                .map(course2 -> List.of(course, course2)))
+//                        .filter(list -> !list.get(0)
+//                                .equals(list.get(1)))
+//                        .collect(Collectors.toList())
+//        );
     }
 }
