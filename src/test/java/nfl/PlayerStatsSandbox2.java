@@ -26,7 +26,7 @@ public class PlayerStatsSandbox2 extends TestBase {
         System.out.println("Page Title is: " + pageTitle);
         assertEquals(pageTitle, "NFL 2020 passing stats - Players | NFL.com");
 
-        List<String> data;
+        List<String> rowData;
         ArrayList<List<String>> playerData = new ArrayList<>();
 
         do {
@@ -34,17 +34,17 @@ public class PlayerStatsSandbox2 extends TestBase {
             // Each page, grab new data in the table, or we'll hit 'state element' error
             List<WebElement> playerRows = driver.findElements(By.xpath("//table/tbody/tr"));
 
-            data = playerRows.stream()
+            rowData = playerRows.stream()
                     .map(row -> row.getText().replace("\n", " "))
                     .collect(Collectors.toList());
 
-            playerData.add(data);
+            playerData.add(rowData);
 
-            if (data.size() == 25) {
+            if (rowData.size() == 25) {
                 // If multiple pages of players to search through, this will tab through each page until a less that full page is found
                 driver.findElement(By.className("nfl-o-table-pagination__next")).click();
             }
-        } while (data.size() == 25);
+        } while (rowData.size() == 25);
 
         List<String> allData = playerData.stream()
                 .flatMap(s -> s.stream())
